@@ -1,32 +1,3 @@
-﻿作业一
-1:
-SELECT ename,deptno
-FROM emp
-WHERE deptno IN (20,30)
-
-2:
-SELECT ename,job
-FROM emp
-WHERE mgr IS NULL
-ORDER BY job
-
-3:
-SELECT ename,sal,comm
-FROM emp
-WHERE comm IS NOT NULL
-ORDER BY sal DESC
-
-4:
-SELECT ename
-FROM emp
-WHERE ename LIKE '__A%'
-
-5:
-SELECT ename||','||job||','||sal out_put
-FROM emp
-
-6:
-SELECT empno,ename,sal,sal*1.2
 
 
 子查询:
