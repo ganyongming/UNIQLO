@@ -1,0 +1,33 @@
+﻿public static void main(String[] args) {
+		StringDemo();
+		Integer a  = 100;
+		Integer b = 100;
+		System.out.println(a == b);//true
+		Integer c = 128;
+		Integer d = 128;
+		System.out.println(c == d);//false
+		
+		/*在编译的时候会直接将代码封装成Integer i1=Integer.valueOf(100)；
+		 * 从而使用常量池中的对象。
+		 * 
+		 * 包装类底层创建了byte范围的数值缓存数据，好比字符串的常池
+		 * 如果超出此范围仍然会去创建新的对象。
+		 */
+	}
+	public static  void StringDemo(){
+		String s1 = "abc";
+		String s2 = "abc";
+		System.out.println(s1 == s2); //true;
+		
+		String s3 = "a";
+		String s4 = "b";
+		String s5 = "a" + "b";
+		String s6 = s3 + s4;
+		System.out.println(s5 == s6);//false
+		String s7 = "ab";
+		System.out.println(s5 == s7);//true
+		/*
+		 * 只有使用引号包含文本的方式创建的String对象之间使用“+”连接产生的新对象才会被加入字符串池中
+		 */
+	}
+	
