@@ -12,10 +12,10 @@ int[] user = user();
 System.out.println("正在摇号请稍等");
 int sum =0;
 while(true){
-	int[] ran = ran();
-	sum++;
-	int count = result(user,ran);
-	if(count==7){
+	int[] ran = ran();//接受用户输入的号码
+	sum++;//记录随机次数
+	int count = result(user,ran);//传两个组号码进行比较
+	if(count==7){//7个号码全对就中奖
 		System.out.println("买了"+sum+"次终于中奖了");
 		System.out.println("我买的号码"+Arrays.toString(user));
 		System.out.println("开奖号码"+Arrays.toString(ran));
@@ -39,7 +39,7 @@ public static int[] ran(){
 			i--;
 		}
 		else{
-			user[i] = index;
+			user[i] = index;//赋值
 			flag[index-1] = true;//生成后打开开关
 		}
 	}
@@ -64,7 +64,7 @@ public static int[] user(){
 		}
 		
 		if(index<=0||index>33){//判断有效号码
-			System.out.println("请输入1-33的号码");
+			System.out.println("请输入1-33的号码");//提示
 			i--;
 			continue;
 		}
@@ -88,7 +88,7 @@ public static int result(int[] user,int[] ran){
 	for(int i=0;i<user.length;i++){
 		for(int j=0;j<ran.length;j++){
 		
-				if(user[i]==ran[j]&&i==j){
+				if(user[i]==ran[j]&&i==j){//位置对了，号码对了，
 					count++;
 				}
 			
